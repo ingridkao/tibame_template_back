@@ -8,8 +8,7 @@ const routes = [
     name: 'home',
     component: HomeView,
     meta: { 
-      title:'首頁',
-      requiresAuth: true 
+      title:'首頁'
     }
   },
   {

@@ -3,7 +3,7 @@ node_modules
 
 # prod folder
 /dist
-/koala
+/cms
 
 # local env files
 .env.local

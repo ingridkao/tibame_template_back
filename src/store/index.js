@@ -23,7 +23,6 @@ export default createStore({
         state.userInfo = json
 
         // 最簡單的加密：將物件轉為字串在使用AES編碼加密
-        this.decodeUseInfo()
         const ciphertext = AES.encrypt(JSON.stringify(json), decode).toString()
         localStorage.setItem('cmstoken', ciphertext)
       }else{

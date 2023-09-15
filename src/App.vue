@@ -2,12 +2,13 @@
   <div v-if="siteLoad" class="loading">Loading...</div>
   <main>
     <nav>
+      <router-link to="/">首頁</router-link> |
       <template v-if="userInfo">
-        <router-link to="/">首頁</router-link> |
         <router-link to="/store">商品</router-link> |
         <span>
           歡迎，{{ userInfo.emp_name }}
         </span>
+        <button @click="logout">登出</button>
       </template>
       <router-link v-else to="/login">登入</router-link> 
     </nav>
@@ -28,8 +29,13 @@ export default {
       return this.$store.state.userInfo
     }
   },
-	methods:{
-
+	mounted(){
+    this.$store.dispatch('checkUseLogin')
+  },
+  methods:{
+    logout(){
+      this.$store.commit('setUseInfo', null)
+    }
   }
 } 
 </script>
